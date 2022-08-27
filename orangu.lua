@@ -163,9 +163,9 @@ function library:CreateWindow(text)
 		local TextBox = Instance.new("TextBox")
 		local callback = callback or function() end
 		local TextRound = Instance.new("UICorner")
-		local TextLine = Instance.new("UIStroke"
+		local TextLine = Instance.new("UIStroke")
 		
-        	TextBox.Parent = Container
+        TextBox.Parent = Container
 		TextBox.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
 		TextBox.Size = UDim2.new(0, 200, 0, 50)
 		TextBox.Font = Enum.Font.SourceSans
