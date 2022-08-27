@@ -140,7 +140,7 @@ function library:CreateWindow(text)
 	
 	function OranguLib:AddLabel(text)
         local Label = Instance.new("TextLabel")
-		local LabelRound = Instance.new("UICorner")
+	local LabelRound = Instance.new("UICorner")
 
 		Label.Name = "Label"
 		Label.Parent = Container
@@ -159,12 +159,13 @@ function library:CreateWindow(text)
 		LabelRound.Parent = Label
     end
 	
-	function OranguLib:AddTextBox(text)
-        local TextBox = Instance.new("TextBox")
+	function OranguLib:AddTextBox(text, callback)
+		local TextBox = Instance.new("TextBox")
+		local callback = callback or function() end
 		local TextRound = Instance.new("UICorner")
 		local TextLine = Instance.new("UIStroke"
 		
-        TextBox.Parent = Container
+        	TextBox.Parent = Container
 		TextBox.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
 		TextBox.Size = UDim2.new(0, 200, 0, 50)
 		TextBox.Font = Enum.Font.SourceSans
@@ -192,7 +193,7 @@ function library:CreateWindow(text)
 		
 		TextBox.FocusLost:Connect(function()
 			TextLine.Color = Color3.fromRGB(255, 170, 0)
-			pcall(TextBox.Text)
+			pcall(callback, TextBox.Text)
 		end)
     end
 	
