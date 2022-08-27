@@ -159,11 +159,10 @@ function library:CreateWindow(text)
 		LabelRound.Parent = Label
     end
 	
-	function OranguLib:AddTextBox(text, callback)
+	function OranguLib:AddTextBox(text)
         local TextBox = Instance.new("TextBox")
 		local TextRound = Instance.new("UICorner")
-		local TextLine = Instance.new("UIStroke")
-		local callback = callback or function() end
+		local TextLine = Instance.new("UIStroke"
 		
         TextBox.Parent = Container
 		TextBox.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
@@ -193,7 +192,7 @@ function library:CreateWindow(text)
 		
 		TextBox.FocusLost:Connect(function()
 			TextLine.Color = Color3.fromRGB(255, 170, 0)
-			pcall(callback, TextBox.Text)()
+			pcall(TextBox.Text)
 		end)
     end
 	
