@@ -159,7 +159,7 @@ function library:CreateWindow(text)
 		LabelRound.Parent = Label
     end
 	
-	function OranguLib:AddTextBox(text)
+	function OranguLib:AddTextBox(text, callback)
         local TextBox = Instance.new("TextBox")
 		local TextRound = Instance.new("UICorner")
 		local TextLine = Instance.new("UIStroke")
